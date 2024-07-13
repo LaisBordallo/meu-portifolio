@@ -1,7 +1,113 @@
-/* You can add global styles to this file, and also import other style files */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
+  }
+  
+  /* Font Global */
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    font-size: 14px; 
+    line-height: 1.6; 
+    color: #ffffff; 
+    background-color: #000000; 
+  }
+  
+  /* Cabeçalhos */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold; 
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    color: #ffffff; 
+  }
+  
+  h1 {
+    font-size: 2.5rem; 
+  }
+  
+  h2 {
+    font-size: 2rem; 
+  }
+  
+  h3 {
+    font-size: 1.75rem; 
+  }
+  
+  h4 {
+    font-size: 1.5rem; 
+  }
+  
+  h5 {
+    font-size: 1.25rem; 
+  }
+  
+  h6 {
+    font-size: 1rem; 
+  }
+  
+  /* Parágrafos */
+  p {
+    margin-bottom: 1rem; 
+    color: #ffffff; 
+  }
+  
+  /* Links */
+  a {
+    color: #00ffd5; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+  }
+  
+  a:hover {
+    color: #00ffd5;
+  }
+  
+  /* Botões */
+  button, .btn {
+    font-family: inherit;
+    font-size: 1rem; 
+    padding: 0.5rem 1rem; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para hover */
+  }
+  
+  button.primary, .btn-primary {
+    background-color: #007bff; 
+    color: #ffffff; /* Cor do texto do botão */
+  }
+  
+  button.primary:hover, .btn-primary:hover {
+    background-color: #9b09fd; /* Cor de fundo do botão ao passar o mouse */
+  }
+  
+  /* Listas */
+  ul, ol {
+    margin-bottom: 1rem; /* Espaçamento inferior */
+    padding-left: 1.5rem; /* Recuo esquerdo */
+  }
+  
+  li {
+    margin-bottom: 0.5rem; /* Espaçamento inferior dos itens da lista */
+  }
+  
+  /* Imagens */
+  img {
+    max-width: 100%; /* Imagens responsivas */
+    height: auto; /* Altura automática */
+  }
+  
+  /* Formulários */
+  input, textarea, select {
+    font-family: inherit; /* Herdar fonte */
+    font-size: 1rem; /* Tamanho da fonte */
+    padding: 0.5rem; /* Espaçamento interno */
+    border: 1px solid #cccccc; /* Borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    border-color: #a65bc4; /* Cor da borda ao focar */
+    outline: none; /* Sem outline */
+  }

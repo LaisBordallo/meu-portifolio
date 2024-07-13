@@ -1,33 +1,105 @@
-.navbar {
-    background-color: #363636;
-    padding: 10px;
+// .navbar {
+//     background-color: #363636;
+//     padding: 10px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+// .navbar-brand {
+//     font-size: 20px;
+//     font-weight: bold;
+//     color: #363636;
+// }
+
+// .navbar-nav {
+//     font: plusjakartasans;
+//     list-style: none;
+//     display: flex;
+// }
+
+// .navbar-nav li {
+//     margin-right: 10px;
+// }
+
+// .navbar-nav li a {
+//     text-decoration: none;
+//     color: #333;
+//     padding: 5px;
+    
+// }
+
+// .navbar-nav li a:hover {
+//     color: #666;
+// }
+
+/* Estilo da Navbar */
+.navbar-top {
+    background-color: #343a40 !important; /* Fundo escuro para a navbar */
+    color: #ffffff; /* Texto branco */
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.navbar-brand {
-    font-size: 20px;
-    font-weight: bold;
-    color: #363636;
-}
-
-.navbar-nav {
-    font: plusjakartasans;
-    list-style: none;
-    display: flex;
-}
-
-.navbar-nav li {
-    margin-right: 10px;
-}
-
-.navbar-nav li a {
-    text-decoration: none;
-    color: #333;
-    padding: 5px;
-    
-}
-
-.navbar-nav li a:hover {
-    color: #666;
-}
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1100; /* Garante que a navbar fique no topo */
+  
+    .logo {
+      flex-grow: 0;
+      background-image: url('/assets/logo.png'); /* Imagem da logo */
+      background-repeat: no-repeat;
+      background-position: center left;
+      background-size: contain;
+      width: 120px; /* Ajusta a largura conforme necessário */
+      height: 60px; /* Ajusta a altura conforme necessário */
+      margin-right: auto; /* Empurra a navegação para a direita */
+    }
+  
+    .navbar-nav {
+      display: flex;
+      justify-content: flex-end;
+  
+      .nav-item {
+        margin: 0 15px; /* Espaçamento entre os itens de navegação */
+        display: flex;
+        align-items: center;
+  
+        .nav-link {
+          color: inherit;
+          display: flex;
+          align-items: center;
+          background: none; /* Remove o fundo */
+          border: none; /* Remove a borda */
+          padding: 10px 15px; /* Adiciona preenchimento para área clicável */
+          transition: color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  
+          i {
+            margin-right: 5px; /* Espaço entre ícone e texto do link */
+          }
+  
+          &:hover, &:focus {
+            color: #66fcf1 !important; /* Cor de hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao hover */
+          }
+  
+          &:active {
+            color: #45a29e !important; /* Cor ao clicar */
+          }
+        }
+      }
+    }
+  }
+  
+  /* Media Queries */
+  @media (max-width: 991.98px) {
+    .navbar-top {
+      .navbar-collapse {
+        justify-content: flex-start;
+      }
+  
+      .logo {
+        order: 0;
+        margin-right: 0;
+      }
+    }
+  }

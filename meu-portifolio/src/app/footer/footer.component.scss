@@ -1,0 +1,22 @@
+/* /c:/Workspace/meu-portifolio/meu-portifolio/src/app/footer/footer.component.scss */
+
+.footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer__contact {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.footer__contact-link {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer__contact-link:hover {
+    text-decoration: underline;
+}
