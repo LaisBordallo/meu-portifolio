@@ -1,9 +1,6 @@
 // Importe as variáveis de cores e tamanhos do seu projeto, se necessário
 
 .container mt-5 {
-    // Defina o estilo do componente Home aqui
-
-    // Exemplo de estilos básicos
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,34 +12,22 @@
 }
 
 .title {
-    // Estilize o título do componente Home aqui
-
-    // Exemplo de estilos básicos
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 16px;
 }
 
 .subtitle {
-    // Estilize o subtítulo do componente Home aqui
-
-    // Exemplo de estilos básicos
     font-size: 16px;
     margin-bottom: 32px;
 }
 
 .content {
-    // Estilize o conteúdo do componente Home aqui
-
-    // Exemplo de estilos básicos
     max-width: 800px;
     text-align: center;
 }
 
 .button {
-    // Estilize o botão do componente Home aqui
-
-    // Exemplo de estilos básicos
     padding: 8px 16px;
     background-color: #333;
     color: #fff;
@@ -53,8 +38,5 @@
 }
 
 .button:hover {
-    // Estilize o botão quando o mouse estiver sobre ele
-
-    // Exemplo de estilos básicos
     background-color: #555;
 }

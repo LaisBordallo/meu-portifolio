@@ -14,7 +14,7 @@
 
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarService } from '../../service/navbar.service';
+import { NavbarService } from '../../navbar/navbar.service'; // Assuming the path is correct
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; // Adicione esta importação
 
