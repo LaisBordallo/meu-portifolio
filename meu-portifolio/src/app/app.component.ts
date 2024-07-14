@@ -25,7 +25,10 @@ import { NavbarComponent } from './navbar/navbar.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,NavbarComponent],
-  templateUrl: './app.component.html',
+  template: `
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+  `,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
