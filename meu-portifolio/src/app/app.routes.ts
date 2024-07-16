@@ -12,5 +12,5 @@ export const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'projects', component: ProjectsComponent},
     {path: 'navbar', component: NavbarComponent},
-    {path: 'carousel', component: CarouselComponent}
+    {path: 'carousel', component: CarouselComponent},
 ];
