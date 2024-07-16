@@ -1,7 +1,8 @@
 // Importe as variáveis de cores e tamanhos do seu projeto, se necessário
 
-.container mt-5 {
+.home-container {
     display: flex;
+    background-color: #000000;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -27,6 +28,23 @@
     text-align: center;
 }
 
+ /* Logos */
+.logos {
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 60.45px;
+
+position: absolute;
+width: 446.82px;
+height: 42px;
+left: 497px;
+top: 1002px;
+
+}
+
 .button {
     padding: 8px 16px;
     background-color: #333;
@@ -40,3 +58,5 @@
 .button:hover {
     background-color: #555;
 }
+
+
