@@ -27,36 +27,3 @@
     max-width: 800px;
     text-align: center;
 }
-
- /* Logos */
-.logos {
-
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 60.45px;
-
-position: absolute;
-width: 446.82px;
-height: 42px;
-left: 497px;
-top: 1002px;
-
-}
-
-.button {
-    padding: 8px 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #555;
-}
-
-
