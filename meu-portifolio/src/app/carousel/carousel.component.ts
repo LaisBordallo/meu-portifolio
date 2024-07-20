@@ -11,9 +11,11 @@ import $ from 'jquery';  // Importação padrão
 })
 export class CarouselComponent implements AfterViewInit {
   images = [
-    { src: 'assets/images/carousel1.png', alt: 'Image 1' },
-    { src: 'assets/images/carousel2.png', alt: 'Image 2' },
-    { src: 'assets/images/carousel3.png', alt: 'Image 3' },
+    { src: '../../assets/images/carousel1.png', alt: 'Image 1' },
+    { src: '../../assets/images/carousel2.png', alt: 'Image 2' },
+    { src: '../../assets/images/carousel3.png', alt: 'Image 3' },
+    { src: '../../assets/images/carousel4.png', alt: 'Image 4' },
+    { src: '../../assets/images/carousel5.png', alt: 'Image 5' },
   ];
 
   ngAfterViewInit() {

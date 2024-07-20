@@ -31,6 +31,17 @@ import { NavbarComponent } from './navbar/navbar.component';
   `,
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
   title = 'meu-portifolio';
+
+  scrollTo(sectionId: string) {
+    document.querySelector(`#${sectionId}`)?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+
+  toggleNavbar() {
+    // Implementar lógica para alternar a navbar em dispositivos móveis
+  }
 }

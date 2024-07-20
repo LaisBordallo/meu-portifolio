@@ -13,4 +13,5 @@ export const routes: Routes = [
     {path: 'projects', component: ProjectsComponent},
     {path: 'navbar', component: NavbarComponent},
     {path: 'carousel', component: CarouselComponent},
+    { path: '**', redirectTo: '' }
 ];
