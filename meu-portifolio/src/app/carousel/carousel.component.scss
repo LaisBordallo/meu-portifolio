@@ -1,18 +1,18 @@
 .carousel {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.carousel-item {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  img {
     width: 100%;
-    margin: auto;
-  }
-  
-  .carousel-item {
-    padding: 1rem;
-    background-color: #fff;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
   }
-  
+}

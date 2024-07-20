@@ -8,10 +8,9 @@ import { CarouselComponent } from './carousel/carousel.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: 'home', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'projects', component: ProjectsComponent},
     {path: 'navbar', component: NavbarComponent},
+    {path: 'about', component: AboutComponent},
     {path: 'carousel', component: CarouselComponent},
+    {path: 'projects', component: ProjectsComponent}, 
     { path: '**', redirectTo: '' }
 ];

@@ -12,17 +12,22 @@
       </li>
       <li class="nav-item">
         <a (click)="scrollTo('about')" class="nav-link">
-          <i class="bi bi-truck"></i> About
+          <i class="bi bi-truck"></i> Sobre
+        </a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scrollTo('carousel')" class="nav-link">
+          <i class="bi bi-truck"></i> Tecnologias
         </a>
       </li>
       <li class="nav-item">
         <a (click)="scrollTo('projects')" class="nav-link">
-          <i class="bi bi-people"></i> Projects
+          <i class="bi bi-people"></i> Projetos
         </a>
       </li>
       <li class="nav-item">
         <a (click)="scrollTo('footer')" class="nav-link">
-          <i class="bi bi-people"></i> Footer
+          <i class="bi bi-people"></i>
         </a>
       </li>
     </ul>
@@ -35,6 +40,9 @@
 </div>
 <div id="about" class="section">
   <app-about></app-about>
+</div>
+<div id="carousel" class="section">
+  <app-carousel></app-carousel>
 </div>
 <div id="projects" class="section">
   <app-projects></app-projects>

@@ -1,63 +1,74 @@
 /* Projects Container */
 .projects-container {
-    padding: 40px 20px;
-    background-color: #f8f9fa;
-  }
-  
+  padding: 40px 20px;
+}
+
+.container mt-5{
+  background-color: black;
+}
+
+.projects-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Card Styles */
+.project-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  background-image: url('../../assets/images/project1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white; /* Para garantir que o texto seja legível no background */
+  padding: 20px;
+  height: 300px; /* Ajuste a altura conforme necessário */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Para que o texto fique na parte inferior do card */
+}
+
+.project-card img {
+  display: none; /* Esconder a imagem original do card */
+}
+
+.project-card .card-body {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semitransparente para o texto */
+  border-radius: 8px;
+}
+
+.project-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-card .card-text {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.project-card .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 0.875rem;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004b91;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
   .projects-container h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2rem;
   }
-  
-  /* Card Styles */
-  .project-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  
-  .project-card img {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .project-card .card-body {
-    padding: 20px;
-  }
-  
-  .project-card .card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .project-card .card-text {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .project-card .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    font-size: 0.875rem;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .project-card .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004b91;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 767px) {
-    .projects-container h1 {
-      font-size: 2rem;
-    }
-  }
+}
