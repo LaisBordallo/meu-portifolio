@@ -1,22 +1,27 @@
-/* /c:/Workspace/meu-portifolio/meu-portifolio/src/app/footer/footer.component.scss */
-
 .footer {
     background-color: #000000;
     padding: 20px;
     text-align: center;
-}
-
-.footer__contact {
-    margin-top: 10px;
-    font-size: 14px;
     color: #888;
-}
 
-.footer__contact-link {
-    color: #888;
-    text-decoration: none;
-}
+    .footer__content {
+        margin-bottom: 20px;
+    }
 
-.footer__contact-link:hover {
-    text-decoration: underline;
+    .footer__text {
+        display: block;
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 10px;
+    }
+
+    .footer__contact-link {
+        color: #888;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer__contact-link:hover {
+        text-decoration: underline;
+    }
 }
