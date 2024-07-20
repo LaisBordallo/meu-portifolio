@@ -1,26 +1,32 @@
-import { Component } from '@angular/core';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { Component, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import $ from 'jquery';  // Importação padrão
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
-  imports: [SlickCarouselModule]
+  imports: [CommonModule]  // Adicionar CommonModule aqui
 })
-export class CarouselComponent {
+export class CarouselComponent implements AfterViewInit {
   images = [
-    { src: 'assets/images/carousel1.jpg', alt: 'Image 1' },
-    { src: 'assets/images/carousel2.jpg', alt: 'Image 2' },
-    { src: 'assets/images/carousel3.jpg', alt: 'Image 3' },
+    { src: 'assets/images/carousel1.png', alt: 'Image 1' },
+    { src: 'assets/images/carousel2.png', alt: 'Image 2' },
+    { src: 'assets/images/carousel3.png', alt: 'Image 3' },
   ];
 
-  slideConfig = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000
-  };
+  ngAfterViewInit() {
+    // Garantir que o jQuery é usado apenas no cliente
+    if (typeof window !== 'undefined') {
+      ($('.carousel') as any).slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000
+      });
+    }
+  }
 }
