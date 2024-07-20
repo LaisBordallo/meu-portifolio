@@ -1,6 +1,10 @@
-import { Component, AfterViewInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import $ from 'jquery';
+import 'slick-carousel/slick/slick';
+
+
 
 @Component({
   selector: 'app-carousel',
@@ -8,21 +12,21 @@ import $ from 'jquery';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
   imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]  // Adicionando CUSTOM_ELEMENTS_SCHEMA aqui
 })
 export class CarouselComponent implements AfterViewInit {
   images = [
-    { src: 'assets/images/carousel1.png', alt: 'Image 1' },
-    { src: 'assets/images/carousel2.png', alt: 'Image 2' },
-    { src: 'assets/images/carousel3.png', alt: 'Image 3' },
-    { src: 'assets/images/carousel4.png', alt: 'Image 4' },
-    { src: 'assets/images/carousel5.png', alt: 'Image 5' },
+    { src: '../../assets/images/carousel1.png', alt: 'Image 1' },
+    { src: '../../assets/images/carousel2.png', alt: 'Image 2' },
+    { src: '../../assets/images/carousel3.png', alt: 'Image 3' },
+    { src: '../../assets/images/carousel4.png', alt: 'Image 4' },
+    { src: '../../assets/images/carousel5.png', alt: 'Image 5' },
   ];
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit() {
     if (typeof window !== 'undefined') {
-      if ($) {
-        console.log('jQuery is loaded');
+      setTimeout(() => {
         ($('.carousel') as any).slick({
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -31,9 +35,8 @@ export class CarouselComponent implements AfterViewInit {
           autoplay: true,
           autoplaySpeed: 2000
         });
-      } else {
-        console.error('jQuery is not loaded');
-      }
+      }, 100);
     }
-  } 
-}
+  }  
+} 
+
