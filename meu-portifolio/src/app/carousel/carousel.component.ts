@@ -1,17 +1,13 @@
-import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, AfterViewInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import $ from 'jquery';
-import 'slick-carousel/slick/slick';
-
-
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule]
 })
 export class CarouselComponent implements AfterViewInit {
   images = [
@@ -25,18 +21,14 @@ export class CarouselComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngAfterViewInit() {
-    if (typeof window !== 'undefined') {
-      setTimeout(() => {
-        ($('.carousel') as any).slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-          infinite: true,
-          autoplay: true,
-          autoplaySpeed: 2000
-        });
-      }, 100);
+    if (isPlatformBrowser(this.platformId)) {
+      // Inicialize o Slick Carousel após a visualização estar pronta
+      $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
     }
-  }  
-} 
-
+  }
+}
