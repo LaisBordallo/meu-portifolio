@@ -3,8 +3,8 @@
     <!-- Conteúdo das Tecnologias -->
   </section>
 
-<div class="carousel">
-    <div *ngFor="let image of images" class="carousel-item">
+  <div class="carousel" ngxSlickCarousel [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let image of images" class="carousel-item">
       <img [src]="image.src" [alt]="image.alt">
     </div>
   </div>
