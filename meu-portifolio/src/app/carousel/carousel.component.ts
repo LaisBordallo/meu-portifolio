@@ -1,13 +1,13 @@
 import { Component, Inject, AfterViewInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
-import $ from 'jquery';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
-  imports: [CommonModule]
+  imports: [CommonModule, SlickCarouselModule]
 })
 export class CarouselComponent implements AfterViewInit {
   images = [
@@ -20,8 +20,10 @@ export class CarouselComponent implements AfterViewInit {
     { src: '../../assets/images/carousel7.png', alt: 'Image 7' },
     { src: '../../assets/images/carousel8.png', alt: 'Image 8' },
     { src: '../../assets/images/carousel9.png', alt: 'Image 9' },
-    { src: '../../assets/images/carousel10.png', alt: 'Image 10'}
+    { src: '../../assets/images/carousel10.png', alt: 'Image 10' }
   ];
+
+  slideConfig = { "slidesToShow": 4, "slidesToScroll": 4 };
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -33,11 +35,14 @@ export class CarouselComponent implements AfterViewInit {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
         centerPadding: '0',
         focusOnSelect: true,
         variableWidth: true,
         initialSlide: 0,
-        rtl: true,  // Rotate carousel from right to left
+        rtl: true,
         responsive: [
           {
             breakpoint: 1024,
@@ -57,7 +62,7 @@ export class CarouselComponent implements AfterViewInit {
           }
         ]
       });
-      
+
       // Set initial active class
       this.setActiveClass();
 
@@ -72,5 +77,29 @@ export class CarouselComponent implements AfterViewInit {
     $('.carousel-item').removeClass('active');
     const current = $('.carousel .slick-current');
     current.addClass('active');
+  }
+
+  addSlide() {
+    // Add your logic here to add a slide
+  }
+  
+  removeSlide() {
+    // Add your logic here to remove a slide
+  }
+
+  slickInit() {
+    console.log('slick initialized');
+  }
+  
+  breakpoint() {
+    console.log('breakpoint');
+  }
+  
+  afterChange() {
+    console.log('afterChange');
+  }
+  
+  beforeChange() {
+    console.log('beforeChange');
   }
 }

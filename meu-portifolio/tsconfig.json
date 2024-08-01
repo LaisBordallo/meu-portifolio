@@ -1,10 +1,7 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "typeRoots": ["./node_modules/@types", "./typings"],
-    "types": ["jquery"],
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -16,13 +13,12 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
-    // "moduleResolution": "bundler",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "es2022",
+    "module": "es2022",
     "lib": [
-      "ES2022",
+      "es2022",
       "dom"
     ]
   },
