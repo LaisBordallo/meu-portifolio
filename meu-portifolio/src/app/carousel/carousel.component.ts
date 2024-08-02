@@ -1,13 +1,22 @@
-import { Component, Inject, AfterViewInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, AfterViewInit, PLATFORM_ID, NgModule } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[ngxSlickItem]'
+})
+export class SlickItemDirective {
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+}
 
 @Component({
   selector: 'app-carousel',
-  standalone: true,
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
-  imports: [CommonModule, SlickCarouselModule]
+  imports: [CommonModule, SlickCarouselModule, BrowserModule]
 })
 export class CarouselComponent implements AfterViewInit {
   images = [
@@ -23,83 +32,30 @@ export class CarouselComponent implements AfterViewInit {
     { src: '../../assets/images/carousel10.png', alt: 'Image 10' }
   ];
 
-  slideConfig = { "slidesToShow": 4, "slidesToScroll": 4 };
+  slideConfig = {
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '0',
+    infinite: true,
+    dots: true,
+    focusOnSelect: true,
+    variableWidth: true,
+    rtl: true  
+  };
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      $('.carousel').slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: true,
-        centerPadding: '0',
-        focusOnSelect: true,
-        variableWidth: true,
-        initialSlide: 0,
-        rtl: true,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-      });
-
-      // Set initial active class
-      this.setActiveClass();
-
-      // Update active class on slide change
-      $('.carousel').on('afterChange', () => {
-        this.setActiveClass();
-      });
+      console.log('Browser rendering');
     }
   }
-
-  setActiveClass() {
-    $('.carousel-item').removeClass('active');
-    const current = $('.carousel .slick-current');
-    current.addClass('active');
-  }
-
-  addSlide() {
-    // Add your logic here to add a slide
-  }
-  
-  removeSlide() {
-    // Add your logic here to remove a slide
-  }
-
-  slickInit() {
-    console.log('slick initialized');
-  }
-  
-  breakpoint() {
-    console.log('breakpoint');
-  }
-  
-  afterChange() {
-    console.log('afterChange');
-  }
-  
-  beforeChange() {
-    console.log('beforeChange');
-  }
 }
+
+@NgModule({
+  declarations: [SlickItemDirective],
+  exports: [CarouselComponent, SlickItemDirective],
+  imports: [CommonModule, BrowserModule, SlickCarouselModule]
+})
+export class CarouselModule {}

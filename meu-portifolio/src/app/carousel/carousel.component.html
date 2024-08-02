@@ -4,7 +4,7 @@
   </section>
 
   <div class="carousel" ngxSlickCarousel [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let image of images" class="carousel-item">
+    <div ngxSlickItem *ngFor="let image of images">
       <img [src]="image.src" [alt]="image.alt">
     </div>
   </div>
